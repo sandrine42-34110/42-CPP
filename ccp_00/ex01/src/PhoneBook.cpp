@@ -6,29 +6,49 @@
 /*   By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 16:46:31 by sapupier          #+#    #+#             */
-/*   Updated: 2025/07/03 15:11:12 by sapupier         ###   ########.fr       */
+/*   Updated: 2025/07/06 17:49:22 by sapupier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include "PhoneBook.hpp"
 
-int main (int argc, char **argv)
+PhoneBook::PhoneBook() : _nbContacts(0)
+{}
+
+PhoneBook::~PhoneBook()
+{}
+
+//Fonction pour ajouter un contact
+void	PhoneBook::addContact()
 {
-	int	i;
+	Contact		newContact;
+	std::string	input;
+	
+	std::cout << "Enter First Name : ";
+	std::getline(std::cin, input);
+	newContact.setFirstName(input);
 
-	if (argc == 1)
-	{
-		std:: cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std:: endl;
-	}
-	else
-	{
-		for (i = 1; i < argc; i++)
-		{
-			std::string str=argv[i];
-			for(std::string::size_type j = 0; j < str.length(); j++)
-				std::cout << (char)std::toupper(str[j]);
-		}
-		std::cout << std:: endl;
-	}
-	return (0);
+	std::cout << "Enter Last Name : ";
+	std::getline(std::cin, input);
+	newContact.setLastName(input);
+
+	std::cout << "Enter Nickname : ";
+	std::getline(std::cin, input);
+	newContact.setNickName(input);
+
+	std::cout << "Enter Phone Number : ";
+	std::getline(std::cin, input);
+	newContact.setPhoneNumber(input);
+
+	std::cout << "Enter Darkest Secret : ";
+	std::getline(std::cin, input);
+	newContact.setDarkestSecret(input);
+
+	int			index = _nbContacts % 8;
+	_contacts[index] = newContact;
+	_nbContacts++;
+
+	std::cout << "Contact added successfully !" << std::endl;
+
 }

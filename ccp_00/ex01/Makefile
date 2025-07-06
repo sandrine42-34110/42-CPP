@@ -6,16 +6,18 @@
 #    By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/30 16:40:21 by sapupier          #+#    #+#              #
-#    Updated: 2025/07/03 15:14:18 by sapupier         ###   ########.fr        #
+#    Updated: 2025/07/04 11:00:19 by sapupier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = PhoneBook
 
 CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -Iinclude
 
-SRC = src/PhoneBook.cpp
+SRC = src/main.cpp \
+			src/PhoneBook.cpp \
+			src/Contact.cpp \
 
 OBJ = ${SRC:.cpp=.o}
 

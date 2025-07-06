@@ -6,7 +6,7 @@
 /*   By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:18:46 by sapupier          #+#    #+#             */
-/*   Updated: 2025/07/03 16:51:19 by sapupier         ###   ########.fr       */
+/*   Updated: 2025/07/04 09:48:48 by sapupier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ class Contact
 		
 		std::string		getFirstName() const;
 		std::string		getLastName() const;
-		std::string		getNickname() const;
+		std::string		getNickName() const;
 		std::string		getPhoneNumber() const;
 		std::string		getDarkestSecret() const;
 
 		void			setFirstName(const std::string &fname);
 		void			setLastName(const std::string &lname);
-		void			setNickname(const std::string &nname);
+		void			setNickName(const std::string &nname);
 		void			setPhoneNumber(const std::string &pnumber);
 		void			setDarkestSecret(const std::string &dsecret);
 		

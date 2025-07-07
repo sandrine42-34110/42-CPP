@@ -6,7 +6,7 @@
 /*   By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 16:52:55 by sapupier          #+#    #+#             */
-/*   Updated: 2025/07/06 17:52:50 by sapupier         ###   ########.fr       */
+/*   Updated: 2025/07/07 10:39:38 by sapupier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ int main (void)
 		{
 			phoneBook.addContact();
 		}
-		// else if (command == "SEARCH")
-		// {
-		// 	phoneBook.searchContact();
-		// }
+		else if (command == "SEARCH")
+		{
+			phoneBook.searchContact();
+		}
 		// else if (command == "EXIT")
 		// {
 		// 	std::cout << "Goodbye!\n";

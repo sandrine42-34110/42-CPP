@@ -6,7 +6,7 @@
 /*   By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 16:46:31 by sapupier          #+#    #+#             */
-/*   Updated: 2025/07/07 14:49:21 by sapupier         ###   ########.fr       */
+/*   Updated: 2025/07/07 15:31:45 by sapupier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ void	PhoneBook::searchContact()
 {
 	int		maxContacts;
 
-	// maxContacts = (_nbContacts < 8) ? _nbContacts :8;
  	if (_nbContacts < 8)
 		maxContacts = _nbContacts;
 	else
@@ -76,12 +75,11 @@ void	PhoneBook::searchContact()
 		std::cout << "No contacts to display." << std::endl;
 		return ;
 	}
+
 	std::cout << std::setw(10) << "index" << "|"
 			  << std::setw(10) << "first name" << "|"
 			  << std::setw(10) << "last name" << "|"
 			  << std::setw(10) << "nickname" << "|" << std::endl;
-			  
-
 
 	for (int i = 0; i < maxContacts; i++)
 	{
@@ -89,9 +87,17 @@ void	PhoneBook::searchContact()
 				  << std::setw(10) << truncateString(_contacts[i].getFirstName()) << "|"
 				  << std::setw(10) << truncateString(_contacts[i].getLastName()) << "|"
 				  << std::setw(10) << truncateString(_contacts[i].getNickName()) << "|" << std::endl;
-			  
-		// std::getline(std::cin, input);
-		// newContact.setContact(input);
-		
 	}
+	
+	std::string	input;
+	std::cout << "Enter the index of the contact to be displayed : " << std::endl;
+	std::getline(std::cin, input);
+	if (input.length() != 1 || !isdigit(input[0]))
+	{
+		std::cout << "Invalid index ! " << std::endl;
+		return ;
+	}
+	int	index = input[0] - '0'; // transforme le caractere input en entier
+	if (index < 0 || )
+	
 }

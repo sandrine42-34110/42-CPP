@@ -6,7 +6,7 @@
 /*   By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 16:46:31 by sapupier          #+#    #+#             */
-/*   Updated: 2025/07/07 15:31:45 by sapupier         ###   ########.fr       */
+/*   Updated: 2025/07/08 13:25:49 by sapupier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ PhoneBook::PhoneBook() : _nbContacts(0)
 PhoneBook::~PhoneBook()
 {}
 
-//Fonction pour ajouter un contact
 void	PhoneBook::addContact()
 {
 	Contact		newContact;
@@ -46,10 +45,17 @@ void	PhoneBook::addContact()
 	std::getline(std::cin, input);
 	newContact.setDarkestSecret(input);
 
-	int			index = _nbContacts % 8;
-	_contacts[index] = newContact;
-	_nbContacts++;
-
+	if(_nbContacts < 8)
+	{
+		_contacts[_nbContacts] = newContact;
+		_nbContacts++;
+	}
+	else
+	{
+		for (int i = 7; i > 0; i--)
+			_contacts[i] = _contacts[i - 1];
+		_contacts[0] = newContact;
+	}
 	std::cout << "Contact added successfully !" << std::endl;
 }
 
@@ -60,22 +66,8 @@ std::string		PhoneBook::truncateString(const std::string &str)const
 	return (str);
 }
 
-
-void	PhoneBook::searchContact()
+void	PhoneBook::displayContacts(int maxContacts) const
 {
-	int		maxContacts;
-
- 	if (_nbContacts < 8)
-		maxContacts = _nbContacts;
-	else
-		maxContacts = 8;
-
-	if (maxContacts == 0)
-	{
-		std::cout << "No contacts to display." << std::endl;
-		return ;
-	}
-
 	std::cout << std::setw(10) << "index" << "|"
 			  << std::setw(10) << "first name" << "|"
 			  << std::setw(10) << "last name" << "|"
@@ -88,16 +80,54 @@ void	PhoneBook::searchContact()
 				  << std::setw(10) << truncateString(_contacts[i].getLastName()) << "|"
 				  << std::setw(10) << truncateString(_contacts[i].getNickName()) << "|" << std::endl;
 	}
-	
+}
+
+int		PhoneBook::askContactIndex(int maxContacts) const
+{
 	std::string	input;
 	std::cout << "Enter the index of the contact to be displayed : " << std::endl;
 	std::getline(std::cin, input);
 	if (input.length() != 1 || !isdigit(input[0]))
 	{
 		std::cout << "Invalid index ! " << std::endl;
-		return ;
+		return (-1);
 	}
 	int	index = input[0] - '0'; // transforme le caractere input en entier
-	if (index < 0 || )
+	if (index < 0 || index >= maxContacts)
+	{
+		std::cout << "Index is out of range." << std::endl;
+		return (-1);
+	}
+	return (index);
+}
+
+void	PhoneBook::displayContactDetails(int index) const
+{
+	std::cout << "First name : " << _contacts[index].getFirstName() << std::endl;
+	std::cout << "Last name : " << _contacts[index].getLastName() << std::endl;
+	std::cout << "Nickname : " << _contacts[index].getNickName() << std::endl;
+	std::cout << "Phone number : " << _contacts[index].getPhoneNumber() << std::endl;
+	std::cout << "Darkest secret : " << _contacts[index].getDarkestSecret() << std::endl;
+}
+
+void	PhoneBook::searchContact()
+{
+	int		maxContacts;
+	int		index;
 	
+ 	if (_nbContacts < 8)
+		maxContacts = _nbContacts;
+	else
+		maxContacts = 8;
+
+	if (maxContacts == 0)
+	{
+		std::cout << "No contacts to display." << std::endl;
+		return ;
+	}
+	displayContacts(maxContacts);
+	index = askContactIndex(maxContacts);
+	if (index == -1)
+		return ;
+	displayContactDetails(maxContacts);
 }

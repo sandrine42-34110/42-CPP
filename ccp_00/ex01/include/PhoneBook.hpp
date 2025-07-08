@@ -6,7 +6,7 @@
 /*   By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:18:46 by sapupier          #+#    #+#             */
-/*   Updated: 2025/07/07 14:40:25 by sapupier         ###   ########.fr       */
+/*   Updated: 2025/07/08 13:19:37 by sapupier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,17 @@ class PhoneBook
 		PhoneBook(void);
 		~PhoneBook(void);
 		
-		void		addContact();
-		void		searchContact();
+		void			addContact();
+		void			searchContact();
 		
 	private:
-		Contact		_contacts[8];
-		int			_nbContacts;
-		
-		std::string		truncateString(const std::string &str)const;
+		void			displayContacts(int maxContacts) const;
+		int				askContactIndex(int maxContacts) const;
+		void			displayContactDetails(int index) const;
 
+		Contact			_contacts[8];
+		int				_nbContacts;
+		std::string		truncateString(const std::string &str)const;
 };
 
 #endif

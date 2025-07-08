@@ -6,7 +6,7 @@
 /*   By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 16:46:31 by sapupier          #+#    #+#             */
-/*   Updated: 2025/07/08 13:25:49 by sapupier         ###   ########.fr       */
+/*   Updated: 2025/07/08 15:05:09 by sapupier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,13 +89,13 @@ int		PhoneBook::askContactIndex(int maxContacts) const
 	std::getline(std::cin, input);
 	if (input.length() != 1 || !isdigit(input[0]))
 	{
-		std::cout << "Invalid index ! " << std::endl;
+		std::cerr << "Invalid index ! " << std::endl;
 		return (-1);
 	}
 	int	index = input[0] - '0'; // transforme le caractere input en entier
 	if (index < 0 || index >= maxContacts)
 	{
-		std::cout << "Index is out of range." << std::endl;
+		std::cerr << "Index is out of range." << std::endl;
 		return (-1);
 	}
 	return (index);

@@ -6,7 +6,7 @@
 /*   By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 16:52:55 by sapupier          #+#    #+#             */
-/*   Updated: 2025/07/08 11:40:21 by sapupier         ###   ########.fr       */
+/*   Updated: 2025/07/08 15:04:07 by sapupier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 
 int main (void)
 {
-	std::cout << "* Welcome to PhoneBook ! *\n\n";
-	std::cout << "To register a new contact, use ADD.\n";
-	std::cout << "To display the requested contact , use SEARCH.\n";
-	std::cout << "To exit the program, use EXIT.\n";
+	std::cout << "* Welcome to PhoneBook ! *" << std::endl << std::endl;
+	std::cout << "To register a new contact, use ADD." << std::endl;
+	std::cout << "To display the requested contact , use SEARCH." << std::endl;
+	std::cout << "To exit the program, use EXIT." << std::endl;
 	 
-	PhoneBook phoneBook;
+	PhoneBook 	phoneBook;
 	std::string command;
 
 	while (true)
@@ -30,6 +30,8 @@ int main (void)
 		std::cout << "> ";
 		std::getline(std::cin, command);
 
+		if (std::cin.eof())
+			break;
 		if (command == "ADD")
 		{
 			phoneBook.addContact();
@@ -40,12 +42,12 @@ int main (void)
 		}
 		else if (command == "EXIT")
 		{
-			std::cout << "Goodbye!\n";
+			std::cout << "Goodbye!" << std::endl;
 			break;
 		}
 		else
 		{
-			std::cout << "Unknown command. Try ADD, SEARCH, or EXIT.\n";
+			std::cout << "Unknown command. Try ADD, SEARCH, or EXIT." << std::endl;
 		}
 	}
 	return (0);

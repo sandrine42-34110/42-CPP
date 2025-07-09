@@ -6,7 +6,7 @@
 /*   By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 16:46:31 by sapupier          #+#    #+#             */
-/*   Updated: 2025/07/08 15:05:09 by sapupier         ###   ########.fr       */
+/*   Updated: 2025/07/09 14:43:14 by sapupier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,22 +27,47 @@ void	PhoneBook::addContact()
 	
 	std::cout << "Enter First Name : ";
 	std::getline(std::cin, input);
+	if (input.empty())
+	{
+		std::cout << "First Name cannot be empty. Please try again." << std::endl;
+		return ;
+	}
 	newContact.setFirstName(input);
 
 	std::cout << "Enter Last Name : ";
 	std::getline(std::cin, input);
+	if (input.empty())
+	{
+		std::cout << "Last Name cannot be empty. Please try again." << std::endl;
+		return ;
+	}
 	newContact.setLastName(input);
 
 	std::cout << "Enter Nickname : ";
 	std::getline(std::cin, input);
+	if (input.empty())
+	{
+		std::cout << "Nickname cannot be empty. Please try again." << std::endl;
+		return ;
+	}
 	newContact.setNickName(input);
 
 	std::cout << "Enter Phone Number : ";
 	std::getline(std::cin, input);
+	if (input.empty())
+	{
+		std::cout << "Phone Number cannot be empty. Please try again." << std::endl;
+		return ;
+	}
 	newContact.setPhoneNumber(input);
 
 	std::cout << "Enter Darkest Secret : ";
 	std::getline(std::cin, input);
+	if (input.empty())
+	{
+		std::cout << "Darkest Secret cannot be empty. Please try again." << std::endl;
+		return ;
+	}
 	newContact.setDarkestSecret(input);
 
 	if(_nbContacts < 8)
@@ -129,5 +154,5 @@ void	PhoneBook::searchContact()
 	index = askContactIndex(maxContacts);
 	if (index == -1)
 		return ;
-	displayContactDetails(maxContacts);
+	displayContactDetails(index);
 }

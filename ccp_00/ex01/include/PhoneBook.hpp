@@ -6,7 +6,7 @@
 /*   By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/03 15:18:46 by sapupier          #+#    #+#             */
-/*   Updated: 2025/07/08 13:19:37 by sapupier         ###   ########.fr       */
+/*   Updated: 2025/07/16 10:20:48 by sapupier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class PhoneBook
 
 		Contact			_contacts[8];
 		int				_nbContacts;
+		int				_index;
 		std::string		truncateString(const std::string &str)const;
 };
 

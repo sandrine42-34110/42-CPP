@@ -6,11 +6,12 @@
 /*   By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 16:46:31 by sapupier          #+#    #+#             */
-/*   Updated: 2025/07/03 14:38:04 by sapupier         ###   ########.fr       */
+/*   Updated: 2025/07/09 13:29:29 by sapupier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <ctype.h>
 
 int main (int argc, char **argv)
 {

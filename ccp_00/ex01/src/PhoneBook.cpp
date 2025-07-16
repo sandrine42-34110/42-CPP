@@ -6,7 +6,7 @@
 /*   By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 16:46:31 by sapupier          #+#    #+#             */
-/*   Updated: 2025/07/16 14:02:01 by sapupier         ###   ########.fr       */
+/*   Updated: 2025/07/16 14:06:42 by sapupier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ void	PhoneBook::addContact()
 	{
 		_nbContacts++;
 	}
-	//if (_nbContacts == 8)
 	std::cout << "Contact added successfully !" << std::endl;
 }
 

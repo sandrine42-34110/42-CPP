@@ -6,7 +6,7 @@
 #    By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/30 16:40:21 by sapupier          #+#    #+#              #
-#    Updated: 2025/07/15 16:41:56 by sapupier         ###   ########.fr        #
+#    Updated: 2025/07/16 15:24:17 by sapupier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -Iinclude
 
 SRC = src/main.cpp \
+			src/zombieHorde.cpp \
 			src/Zombie.cpp \
 
 OBJ = ${SRC:.cpp=.o}

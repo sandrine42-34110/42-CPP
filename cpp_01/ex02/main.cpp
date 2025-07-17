@@ -6,19 +6,24 @@
 /*   By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 09:10:41 by sapupier          #+#    #+#             */
-/*   Updated: 2025/07/16 16:24:18 by sapupier         ###   ########.fr       */
+/*   Updated: 2025/07/17 08:39:05 by sapupier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 
 int	main(void)
 {
 	std::string variable = "HI THIS IS BRAIN";
+	std::string variable*  =
+	stringPTR;
+	stringREF;
+	
+	std::cout << "The memory address of the string variable : " << std::endl;
+	std::cout << "The memory held by stringPTR              : " << std::endl;
+	std::cout << "The memory held by stringREF              : " << std::endl;
 
-
-	// std::cout << "--- Test N = 5 ---" << std::endl;
-	// int N = 5;
 	
 	// Zombie* horde = zombieHorde(N, "Foo");
 	

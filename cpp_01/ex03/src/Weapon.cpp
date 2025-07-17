@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/15 16:43:07 by sapupier          #+#    #+#             */
-/*   Updated: 2025/07/16 15:31:32 by sapupier         ###   ########.fr       */
+/*   Created: 2025/07/15 09:11:22 by sapupier          #+#    #+#             */
+/*   Updated: 2025/07/17 14:28:41 by sapupier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-/*  La fonction zombieHorde est une fonction libre (pas une methode de classe, 
-donc pas de constructeur/destructeur pour cette fonction  */
+// Constructeur
+Weapon::Weapon(const std::string& type) : _type(type)
+{}
 
-Zombie* zombieHorde(int N, std::string name)
+// Destructeur
+Weapon::~Weapon()
 {
-	if (N <= 0)
-		return NULL;
+}
 
-	Zombie*	horde = new Zombie[N];
-	for (int i = 0; i < N; i++)
-	{
-		horde[i].setName(name);
-	}
-	return horde;
+const	std::string& Weapon::getType() const
+{
+	return _type;
+}
+
+void 	Weapon::setType(const std::string& type)
+{
+	_type = type;
 }

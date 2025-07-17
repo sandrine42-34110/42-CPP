@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 09:14:09 by sapupier          #+#    #+#             */
-/*   Updated: 2025/07/17 13:54:00 by sapupier         ###   ########.fr       */
+/*   Updated: 2025/07/17 15:10:59 by sapupier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
+# include <iostream>
 # include <string>
+# include "Weapon.hpp"
 
-class Weapon
+class HumanB
 {
 	public:
-		Weapon(const std::string &type); // initialisation de l arme avc un type des sa creation
-		~Weapon();
+		HumanB(const std::string& name);
+		~HumanB();
 	
-		const std::string& getType() const;
-		void setType(const std::string& type);
+		void attack() const;
+		void setName(const std::string& name);
+		void setWeapon(const Weapon& weapon);
 
 	private:
-		std::string _type;
+		std::string	_name;				// attribut prive
+		Weapon*		_weapon;			// pointeur car HumanB n est pas tj arme
 };
 
 #endif

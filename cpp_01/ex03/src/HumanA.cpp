@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/15 09:14:09 by sapupier          #+#    #+#             */
-/*   Updated: 2025/07/17 13:54:00 by sapupier         ###   ########.fr       */
+/*   Created: 2025/07/15 09:11:22 by sapupier          #+#    #+#             */
+/*   Updated: 2025/07/17 15:18:23 by sapupier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#include <iostream>
+#include "HumanA.hpp"
 
-# include <string>
+// Constructeur
+HumanA(const std::string& name, Weapon& Weapon) : _name(name), _weapon(weapon)
+{}
 
-class Weapon
+HumanA::HumanA()
+{}
+
+// Destructeur
+HumanA::~HumanA()
 {
-	public:
-		Weapon(const std::string &type); // initialisation de l arme avc un type des sa creation
-		~Weapon();
-	
-		const std::string& getType() const;
-		void setType(const std::string& type);
+	std::cout << "HumanA " << _name << "  attacks with their " <<  << std::endl;
+}
 
-	private:
-		std::string _type;
-};
+const std::string& getType() const
+{
+	return &_type;
+}
 
-#endif
+void 	Weapon::setType(std::string type)
+{
+	_type = type;
+}

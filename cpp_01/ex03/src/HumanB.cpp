@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 09:11:22 by sapupier          #+#    #+#             */
-/*   Updated: 2025/07/16 15:39:17 by sapupier         ###   ########.fr       */
+/*   Updated: 2025/07/17 14:52:30 by sapupier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Zombie.hpp"
+#include "HumanA.hpp"
 
 // Constructeur
-Zombie::Zombie(std::string name) : _name(name)
+HumanA::HumanA(std::string name) : _name(name)
 {}
 
-Zombie::Zombie()
+HumanA::HumanA()
 {}
 
 // Destructeur
-Zombie::~Zombie()
+HumanA::~HumanA()
 {
-	std::cout << "Zombie " << _name << " is destroyed !" << std::endl;
+	std::cout << "HumanA " << _name << "  attacks with their " <<  << std::endl;
 }
 
-// Methode announce()
-void	Zombie::announce(void)
+const std::string& getType() const
 {
-	std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	return &_type;
 }
 
-void 	Zombie::setName(std::string name)
+void 	Weapon::setType(std::string type)
 {
-	_name = name;
+	_type = type;
 }

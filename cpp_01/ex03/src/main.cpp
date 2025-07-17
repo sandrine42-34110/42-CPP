@@ -6,51 +6,30 @@
 /*   By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 09:10:41 by sapupier          #+#    #+#             */
-/*   Updated: 2025/07/16 16:14:18 by sapupier         ###   ########.fr       */
+/*   Updated: 2025/07/17 14:25:49 by sapupier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
-Zombie* zombieHorde(int N, std::string name);
-
-int	main(void)
+int main()
 {
-
-	std::cout << "--- Test N = 5 ---" << std::endl;
-	int N = 5;
-	
-	Zombie* horde = zombieHorde(N, "Foo");
-	
-	for (int i = 0; i < N; i++)
 	{
-		horde[i].announce();
-	}
-	delete []horde;
+		Weapon club = Weapon("crude spiked club");
 
-	std::cout << std::endl;
-	std::cout << "--- Test N = 0 ---" << std::endl;
-	N = 0;
-	
-	Zombie* emptyHorde = zombieHorde(N, "Nobody");
-	
-	for (int i = 0; i < N; i++)
-	{
-		emptyHorde[i].announce();
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
 	}
-	delete []emptyHorde;
-
-	std::cout << std::endl;
-	std::cout << "--- Test N = 3 ---" << std::endl;
-	N = 3;
-	
-	Zombie* secondHorde = zombieHorde(N, "Boo");
-	
-	for (int i = 0; i < N; i++)
 	{
-		secondHorde[i].announce();
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
 	}
-	delete []secondHorde;
-	return (0);
+	return 0;
 }

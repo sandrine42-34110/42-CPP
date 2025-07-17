@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 09:14:09 by sapupier          #+#    #+#             */
-/*   Updated: 2025/07/17 13:54:00 by sapupier         ###   ########.fr       */
+/*   Updated: 2025/07/17 15:26:30 by sapupier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
+# include <iostream>
 # include <string>
+# include "Weapon.hpp"
 
-class Weapon
+
+class HumanA
 {
 	public:
-		Weapon(const std::string &type); // initialisation de l arme avc un type des sa creation
-		~Weapon();
+		HumanA(const std::string& name, Weapon& weapon);
+		~HumanA();
 	
-		const std::string& getType() const;
-		void setType(const std::string& type);
+		void attack() const;
+		void setName(const std::string& name);
 
 	private:
-		std::string _type;
+		std::string	_name;				// attribut prive
+		Weapon&		_weapon;			// reference car HumanA est tj arme
 };
 
 #endif

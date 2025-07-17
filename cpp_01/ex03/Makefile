@@ -6,18 +6,19 @@
 #    By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/06/30 16:40:21 by sapupier          #+#    #+#              #
-#    Updated: 2025/07/16 15:24:17 by sapupier         ###   ########.fr        #
+#    Updated: 2025/07/17 14:23:56 by sapupier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie
+NAME = weapon
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -Iinclude
 
 SRC = src/main.cpp \
-			src/zombieHorde.cpp \
-			src/Zombie.cpp \
+			src/HumanA.cpp \
+			src/HumanB.cpp \
+			src/Weapon.cpp \
 
 OBJ = ${SRC:.cpp=.o}
 

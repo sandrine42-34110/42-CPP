@@ -6,7 +6,7 @@
 /*   By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 09:11:22 by sapupier          #+#    #+#             */
-/*   Updated: 2025/07/17 15:18:23 by sapupier         ###   ########.fr       */
+/*   Updated: 2025/07/18 11:03:35 by sapupier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,19 @@
 #include "HumanA.hpp"
 
 // Constructeur
-HumanA(const std::string& name, Weapon& Weapon) : _name(name), _weapon(weapon)
-{}
-
-HumanA::HumanA()
+HumanA::HumanA(const std::string& name, Weapon& Weapon) : _name(name), _weapon(Weapon)
 {}
 
 // Destructeur
 HumanA::~HumanA()
+{}
+
+void HumanA::attack() const
 {
-	std::cout << "HumanA " << _name << "  attacks with their " <<  << std::endl;
+	std::cout << _name << "  attacks with their " << _weapon.getType() << std::endl;
 }
 
-const std::string& getType() const
+void HumanA::setName(const std::string& name)
 {
-	return &_type;
-}
-
-void 	Weapon::setType(std::string type)
-{
-	_type = type;
+	_name = name;
 }

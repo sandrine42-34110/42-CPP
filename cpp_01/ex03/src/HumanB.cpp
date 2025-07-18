@@ -1,37 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sapupier <sapupier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 09:11:22 by sapupier          #+#    #+#             */
-/*   Updated: 2025/07/17 14:52:30 by sapupier         ###   ########.fr       */
+/*   Updated: 2025/07/18 11:03:56 by sapupier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "HumanA.hpp"
+#include "HumanB.hpp"
 
 // Constructeur
-HumanA::HumanA(std::string name) : _name(name)
-{}
-
-HumanA::HumanA()
+HumanB::HumanB(const std::string& name) : _name(name), _weapon (NULL)
 {}
 
 // Destructeur
-HumanA::~HumanA()
+HumanB::~HumanB()
+{}
+
+void HumanB::attack() const
 {
-	std::cout << "HumanA " << _name << "  attacks with their " <<  << std::endl;
+	if (_weapon)
+		std::cout << _name << "  attacks with their " << _weapon->getType() << std::endl;
+	else
+		std::cout << _name << "  has no weapon." << std::endl;
+
 }
 
-const std::string& getType() const
+void HumanB::setName(const std::string& name)
 {
-	return &_type;
+	_name = name;
 }
 
-void 	Weapon::setType(std::string type)
+void HumanB::setWeapon(const Weapon& weapon)
 {
-	_type = type;
+	_weapon = &weapon;   //on stocke l adresse
 }
+
+
